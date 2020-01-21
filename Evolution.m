@@ -2,7 +2,7 @@ function out = Evolution(population, fitnessRequired, type, constraints, evalPar
 %STEPEVALUATION Does the evolution algorithm and returns the final
 %individual who passes the required fitness. plots whenever the fitness
 %increases
-tic
+%tic
 Fs = zeros(size(population,1), 2);
 parfor it = 1:length(Fs)
     Fs(it, :) = [Fitness(population(it,:), constraints, type, evalParameters), it];
@@ -11,7 +11,7 @@ end
 [~,idx] = sort(Fs(:,1)); % sort just the first column
 sortedF = flipud(Fs(idx,:));   % sort the whole matrix using the sort indices
 %stats:
-disp("Best indv: " + string(sortedF(1,1)));
+%disp("Best indv: " + string(sortedF(1,1)));
 %see if we should plot
 if sortedF(1,1) > lastFitness
     PlotIndividual(population(sortedF(1,2), :), constraints, type);
@@ -47,7 +47,7 @@ granularity = 1 - sortedF(1,1); %distance away from perfect fitness
 %evalParameters = [.5, .5, .1, .9];
 lastFitness = sortedF(1,1);
 newMutateParams = [.4 * granularity, .05 * granularity + .05, .4 * granularity + .1, mutateParams(4), mutateParams(5), mutateParams(6)];
-toc
+%toc
 % recurse
 out = Evolution(population, fitnessRequired, type, constraints, evalParameters, lastFitness, newMutateParams, genParams);
 

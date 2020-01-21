@@ -62,6 +62,6 @@ end
 totalExcl = eIn + eOut;
 totalIncl = iIn + iOut;
 %figure out our fitness based on what we got
-F = iIn / totalIncl * evalParameters(2) + iTotal / totalIncl * evalParameters(6) + eIn / totalExcl * evalParameters(1) + (1 - (eTotal / totalExcl)) * evalParameters(5);
+F = iIn / totalIncl * evalParameters(2) + (iTotal / totalIncl) / evalParameters(4) * evalParameters(6) + eIn / totalExcl * evalParameters(1) + (1 - ((eTotal / totalExcl)/ evalParameters(3))) * evalParameters(5);
 end
 
