@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dsg"
+version = "0.1.0"
+description = "Dielectric Stack Generator for Bandpass Filters"
+authors = ["Jared Dobry <jareddobry10@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+matplotlib = "^3.5.3"
+
+[tool.poetry.dev-dependencies]
+black = "*"
+flake8 = "*"
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+dsg = "dsg.main:main"
